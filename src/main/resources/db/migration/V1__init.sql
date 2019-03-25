@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS tickets (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(40) NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS ticket_state_machine_context (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    ticket_id BIGINT NOT NULL,
+    cur_state VARCHAR(40) NOT NULL,
+    context VARCHAR(200) NOT NULL,
+    PRIMARY KEY(id)
+);
